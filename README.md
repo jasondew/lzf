@@ -1,6 +1,7 @@
 # Lzf
 
-TODO: Write a gem description
+LZF compression with liblzf for ruby
+
 
 ## Installation
 
@@ -18,7 +19,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    > require 'lzf'
+    > compressed = LZF.compress('testtesttesttesttest')
+     => "\x04testt\xE0\x04\x03\x01st"
+    > LZF.decompress(compressed)
+     => "testtesttesttesttest"
 
 ## Contributing
 
@@ -30,5 +35,9 @@ TODO: Write usage instructions here
 
 ## Credits
 
-Loosely based on https://bitbucket.org/winebarrel/lzf-ruby/overview
-which won't compile for me.
+(c) 2013 GlebTV. MIT license
+
+Contains LibLZF (BSD-type-license): http://oldhome.schmorp.de/marc/liblzf.html
+
+Loosely based on https://bitbucket.org/winebarrel/lzf-ruby/overview (Copyright (c) 2008 SUGAWARA Genki <sgwr_dts@yahoo.co.jp>,
+BSD License) which won't compile properly for me.
