@@ -6,7 +6,7 @@ Dir.glob('./test_data/*.lzf').each do |f|
   # puts hash
   compressed = File.read(f)
   decompressed = LZF.decompress(compressed)
-  p decompressed
+  # p decompressed
   if Zlib.adler32(decompressed) != hash.to_f
     puts "crc error: #{Zlib.adler32(decompressed)} != #{hash}"
     puts decompressed
@@ -17,3 +17,4 @@ Dir.glob('./test_data/*.lzf').each do |f|
   end
 end
 
+puts "all ok"
